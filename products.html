@@ -3,154 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products | Hsu Tharaphu Co., Ltd.</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Products | Hsu Tharaphu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        .container { padding: 40px 5%; }
-        .category-section { margin-bottom: 50px; }
-        .category-title { 
-            background: #2c3e50; 
-            color: white; 
-            padding: 10px 20px; 
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-        }
-        .product-item {
-            border: 1px solid #ddd;
-            padding: 10px;
-            border-radius: 4px;
-            background: #f9f9f9;
-            font-size: 0.9em;
-        }
+        :root { --primary-green: #2ecc71; --dark: #1d1d1f; }
+        body { font-family: 'Inter', sans-serif; margin: 0; background: #fff; color: var(--dark); }
+        
+        nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); position: fixed; top: 0; width: 100%; z-index: 1000; display: flex; justify-content: center; padding: 15px 0; }
+        nav a { color: var(--dark); text-decoration: none; font-size: 14px; margin: 0 20px; }
+
+        .container { max-width: 1100px; margin: 100px auto; padding: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        
+        .product-card { background: #f5f5f7; border-radius: 20px; padding: 40px; text-align: center; transition: 0.4s; }
+        .product-card:hover { transform: scale(1.02); background: #f2f2f2; }
+        .product-card h3 { font-size: 1.8rem; margin: 10px 0; }
+        .product-card p { color: #86868b; }
+        .btn { background: var(--primary-green); color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; margin-top: 15px; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Hsu Tharaphu Co., Ltd.</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="products.html">Products</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+    <nav><a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Products</a><a href="contact.html">Contact</a></nav>
 
     <div class="container">
-        <h2>Product Catalog</h2>
-        <p>Total Items: Approx. 200+ Quality Products</p>
-
-        <!-- 1. Solar System -->
-        <div class="category-section">
-            <h3 class="category-title">1. Solar Energy Solutions (ဆိုလာစနစ်များ)</h3>
-            <div class="product-grid">
-                <div class="product-item">Solar Panels (Mono/Poly)</div>
-                <div class="product-item">Hybrid Inverters</div>
-                <div class="product-item">Solar Charge Controllers</div>
-                <div class="product-item">Solar Mounting Structures</div>
-                <div class="product-item">MC4 Connectors & Cables</div>
-                <div class="product-item">Solar Water Pumps</div>
-                <div class="product-item">Solar Street Lights</div>
-                <div class="product-item">DC Circuit Breakers</div>
-                <div class="product-item">Solar Combiner Boxes</div>
-                <div class="product-item">Portable Solar Kits</div>
+        <h2 style="font-size: 3rem; text-align: center; margin-bottom: 50px;">Our Portfolio.</h2>
+        <div class="grid">
+            <div class="product-card">
+                <h3>Solar Solutions</h3>
+                <p>Sustainable energy for a brighter tomorrow.</p>
+                <button class="btn">Explore</button>
+            </div>
+            <div class="product-card">
+                <h3>CCTV & Security</h3>
+                <p>Advanced protection for your assets.</p>
+                <button class="btn">Explore</button>
+            </div>
+            <div class="product-card" style="background: var(--dark); color: white;">
+                <h3 style="color: var(--primary-green);">Chemicals</h3>
+                <p style="color: #86868b;">Industrial grade raw materials.</p>
+                <button class="btn">Explore</button>
             </div>
         </div>
-
-        <!-- 2. Batteries -->
-        <div class="category-section">
-            <h3 class="category-title">2. Battery Solutions (ဘက်ထရီအမျိုးမျိုး)</h3>
-            <div class="product-grid">
-                <div class="product-item">Lithium LiFePO4 Batteries</div>
-                <div class="product-item">Deep Cycle Gel Batteries</div>
-                <div class="product-item">Lead Acid Batteries</div>
-                <div class="product-item">Tubular Batteries</div>
-                <div class="product-item">UPS Batteries</div>
-                <div class="product-item">Solar Wall-Mounted Batteries</div>
-                <div class="product-item">Maintenance Free Batteries</div>
-                <div class="product-item">High-Capacity Battery Banks</div>
-                <div class="product-item">Battery Management Systems</div>
-                <div class="product-item">Smart Chargers</div>
-            </div>
-        </div>
-
-        <!-- 3. CCTV & Security -->
-        <div class="category-section">
-            <h3 class="category-title">3. CCTV & Security (လုံခြုံရေးကင်မရာများ)</h3>
-            <div class="product-grid">
-                <div class="product-item">IP Cameras (4K/HD)</div>
-                <div class="product-item">Analog HD Cameras</div>
-                <div class="product-item">Wireless PTZ Cameras</div>
-                <div class="product-item">Network Video Recorders (NVR)</div>
-                <div class="product-item">Digital Video Recorders (DVR)</div>
-                <div class="product-item">Hard Drives for Surveillance</div>
-                <div class="product-item">Biometric Access Control</div>
-                <div class="product-item">Alarm Systems</div>
-                <div class="product-item">Video Door Phones</div>
-                <div class="product-item">CCTV Power Supplies</div>
-            </div>
-        </div>
-
-        <!-- 4. Electrical Items -->
-        <div class="category-section">
-            <h3 class="category-title">4. Electrical Appliances (လျှပ်စစ်ပစ္စည်းများ)</h3>
-            <div class="product-grid">
-                <div class="product-item">LED Lighting Systems</div>
-                <div class="product-item">Power Transformers</div>
-                <div class="product-item">Circuit Breakers (MCB/MCCB)</div>
-                <div class="product-item">Electrical Cables & Wires</div>
-                <div class="product-item">Distribution Boards</div>
-                <div class="product-item">Voltage Stabilizers</div>
-                <div class="product-item">Industrial Plugs & Sockets</div>
-                <div class="product-item">Switch Gears</div>
-                <div class="product-item">Electric Motors</div>
-                <div class="product-item">Automatic Transfer Switches</div>
-            </div>
-        </div>
-
-        <!-- 5. Construction Materials -->
-        <div class="category-section">
-            <h3 class="category-title">5. Construction Materials (ဆောက်လုပ်ရေးပစ္စည်းများ)</h3>
-            <div class="product-grid">
-                <div class="product-item">Structural Steel Beams</div>
-                <div class="product-item">Deformed Bars (GI/Steel)</div>
-                <div class="product-item">High-Grade Cement</div>
-                <div class="product-item">Roofing Sheets (Color Coat)</div>
-                <div class="product-item">PVC & PE Pipes</div>
-                <div class="product-item">Welding Rods & Materials</div>
-                <div class="product-item">Insulation Materials</div>
-                <div class="product-item">Tile Adhesives</div>
-                <div class="product-item">Scaffolding Systems</div>
-                <div class="product-item">Power Tools (Drills/Grinders)</div>
-            </div>
-        </div>
-
-        <!-- 6. Chemical Raw Materials -->
-        <div class="category-section">
-            <h3 class="category-title">6. Chemical Raw Materials (ဓာတုကုန်ကြမ်းများ)</h3>
-            <div class="product-grid">
-                <div class="product-item">Industrial Solvents</div>
-                <div class="product-item">Polymers & Resins</div>
-                <div class="product-item">Cleaning Chemical Bases</div>
-                <div class="product-item">Food Grade Additives</div>
-                <div class="product-item">Water Treatment Chemicals</div>
-                <div class="product-item">Fertilizer Raw Materials</div>
-                <div class="product-item">Textile Dyes</div>
-                <div class="product-item">Adhesives & Sealants</div>
-                <div class="product-item">Pigments & Coatings</div>
-                <div class="product-item">Lab Reagents</div>
-            </div>
-        </div>
-
-        <p style="text-align: center; margin-top: 30px;">And more than 140+ other items available in our catalog...</p>
     </div>
-
-    <footer>
-        <p>&copy; 2026 Hsu Tharaphu Co., Ltd. | Quality You Can Trust</p>
-    </footer>
 </body>
 </html>
