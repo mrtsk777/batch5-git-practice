@@ -5,10 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Products | Hsu Tharaphu Co., Ltd.</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .container { padding: 40px 5%; }
+        .category-section { margin-bottom: 50px; }
+        .category-title { 
+            background: #2c3e50; 
+            color: white; 
+            padding: 10px 20px; 
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .product-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 4px;
+            background: #f9f9f9;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Our Products</h1>
+        <h1>Hsu Tharaphu Co., Ltd.</h1>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
@@ -17,44 +40,117 @@
         </nav>
     </header>
 
-    <section class="product-list">
-        <h2>Available Items</h2>
-        
-        <!-- ပစ္စည်းစာရင်းကို ဇယားနဲ့ ပြသခြင်း -->
-        <table border="1" style="width:100%; border-collapse: collapse; margin-top: 20px;">
-            <thead>
-                <tr style="background-color: #2c3e50; color: white;">
-                    <th style="padding: 10px;">No.</th>
-                    <th>Product Name (ကုန်ပစ္စည်းအမည်)</th>
-                    <th>Category (အမျိုးအစား)</th>
-                    <th>Origin (နိုင်ငံ)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="padding: 10px; text-align: center;">1</td>
-                    <td>High-Quality Rice (ဆန်)</td>
-                    <td>Agricultural Product</td>
-                    <td>Myanmar</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; text-align: center;">2</td>
-                    <td>Construction Steel (ဆောက်လုပ်ရေးသုံး သံမဏိ)</td>
-                    <td>Industrial</td>
-                    <td>Japan</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; text-align: center;">3</td>
-                    <td>Organic Beans (ပဲမျိုးစုံ)</td>
-                    <td>Agricultural Product</td>
-                    <td>Myanmar</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+    <div class="container">
+        <h2>Product Catalog</h2>
+        <p>Total Items: Approx. 200+ Quality Products</p>
+
+        <!-- 1. Solar System -->
+        <div class="category-section">
+            <h3 class="category-title">1. Solar Energy Solutions (ဆိုလာစနစ်များ)</h3>
+            <div class="product-grid">
+                <div class="product-item">Solar Panels (Mono/Poly)</div>
+                <div class="product-item">Hybrid Inverters</div>
+                <div class="product-item">Solar Charge Controllers</div>
+                <div class="product-item">Solar Mounting Structures</div>
+                <div class="product-item">MC4 Connectors & Cables</div>
+                <div class="product-item">Solar Water Pumps</div>
+                <div class="product-item">Solar Street Lights</div>
+                <div class="product-item">DC Circuit Breakers</div>
+                <div class="product-item">Solar Combiner Boxes</div>
+                <div class="product-item">Portable Solar Kits</div>
+            </div>
+        </div>
+
+        <!-- 2. Batteries -->
+        <div class="category-section">
+            <h3 class="category-title">2. Battery Solutions (ဘက်ထရီအမျိုးမျိုး)</h3>
+            <div class="product-grid">
+                <div class="product-item">Lithium LiFePO4 Batteries</div>
+                <div class="product-item">Deep Cycle Gel Batteries</div>
+                <div class="product-item">Lead Acid Batteries</div>
+                <div class="product-item">Tubular Batteries</div>
+                <div class="product-item">UPS Batteries</div>
+                <div class="product-item">Solar Wall-Mounted Batteries</div>
+                <div class="product-item">Maintenance Free Batteries</div>
+                <div class="product-item">High-Capacity Battery Banks</div>
+                <div class="product-item">Battery Management Systems</div>
+                <div class="product-item">Smart Chargers</div>
+            </div>
+        </div>
+
+        <!-- 3. CCTV & Security -->
+        <div class="category-section">
+            <h3 class="category-title">3. CCTV & Security (လုံခြုံရေးကင်မရာများ)</h3>
+            <div class="product-grid">
+                <div class="product-item">IP Cameras (4K/HD)</div>
+                <div class="product-item">Analog HD Cameras</div>
+                <div class="product-item">Wireless PTZ Cameras</div>
+                <div class="product-item">Network Video Recorders (NVR)</div>
+                <div class="product-item">Digital Video Recorders (DVR)</div>
+                <div class="product-item">Hard Drives for Surveillance</div>
+                <div class="product-item">Biometric Access Control</div>
+                <div class="product-item">Alarm Systems</div>
+                <div class="product-item">Video Door Phones</div>
+                <div class="product-item">CCTV Power Supplies</div>
+            </div>
+        </div>
+
+        <!-- 4. Electrical Items -->
+        <div class="category-section">
+            <h3 class="category-title">4. Electrical Appliances (လျှပ်စစ်ပစ္စည်းများ)</h3>
+            <div class="product-grid">
+                <div class="product-item">LED Lighting Systems</div>
+                <div class="product-item">Power Transformers</div>
+                <div class="product-item">Circuit Breakers (MCB/MCCB)</div>
+                <div class="product-item">Electrical Cables & Wires</div>
+                <div class="product-item">Distribution Boards</div>
+                <div class="product-item">Voltage Stabilizers</div>
+                <div class="product-item">Industrial Plugs & Sockets</div>
+                <div class="product-item">Switch Gears</div>
+                <div class="product-item">Electric Motors</div>
+                <div class="product-item">Automatic Transfer Switches</div>
+            </div>
+        </div>
+
+        <!-- 5. Construction Materials -->
+        <div class="category-section">
+            <h3 class="category-title">5. Construction Materials (ဆောက်လုပ်ရေးပစ္စည်းများ)</h3>
+            <div class="product-grid">
+                <div class="product-item">Structural Steel Beams</div>
+                <div class="product-item">Deformed Bars (GI/Steel)</div>
+                <div class="product-item">High-Grade Cement</div>
+                <div class="product-item">Roofing Sheets (Color Coat)</div>
+                <div class="product-item">PVC & PE Pipes</div>
+                <div class="product-item">Welding Rods & Materials</div>
+                <div class="product-item">Insulation Materials</div>
+                <div class="product-item">Tile Adhesives</div>
+                <div class="product-item">Scaffolding Systems</div>
+                <div class="product-item">Power Tools (Drills/Grinders)</div>
+            </div>
+        </div>
+
+        <!-- 6. Chemical Raw Materials -->
+        <div class="category-section">
+            <h3 class="category-title">6. Chemical Raw Materials (ဓာတုကုန်ကြမ်းများ)</h3>
+            <div class="product-grid">
+                <div class="product-item">Industrial Solvents</div>
+                <div class="product-item">Polymers & Resins</div>
+                <div class="product-item">Cleaning Chemical Bases</div>
+                <div class="product-item">Food Grade Additives</div>
+                <div class="product-item">Water Treatment Chemicals</div>
+                <div class="product-item">Fertilizer Raw Materials</div>
+                <div class="product-item">Textile Dyes</div>
+                <div class="product-item">Adhesives & Sealants</div>
+                <div class="product-item">Pigments & Coatings</div>
+                <div class="product-item">Lab Reagents</div>
+            </div>
+        </div>
+
+        <p style="text-align: center; margin-top: 30px;">And more than 140+ other items available in our catalog...</p>
+    </div>
 
     <footer>
-        <p>&copy; 2026 Hsu Tharaphu Co., Ltd.</p>
+        <p>&copy; 2026 Hsu Tharaphu Co., Ltd. | Quality You Can Trust</p>
     </footer>
 </body>
 </html>
