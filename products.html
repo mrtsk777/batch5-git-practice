@@ -1,106 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products | Hsu Tharaphu</title>
+    <title>Products | Hsu Tharaphu Co., Ltd.</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-green: #2ecc71; --dark: #1d1d1f; --gray: #86868b; --light-bg: #f5f5f7; }
+        body { font-family: 'Inter', sans-serif; margin: 0; background: #fff; color: var(--dark); }
+        
+        nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); position: fixed; top: 0; width: 100%; z-index: 1000; display: flex; justify-content: center; padding: 18px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        nav a { color: var(--dark); text-decoration: none; font-size: 18px; font-weight: 500; margin: 0 20px; transition: 0.3s; }
+        nav a:hover { color: var(--primary-green); }
+
+        .products-hero { padding: 150px 20px 40px; text-align: center; }
+        .products-hero h1 { font-size: 3.5rem; font-weight: 700; letter-spacing: -2px; margin: 0; }
+        .products-hero p { font-size: 1.3rem; color: var(--gray); margin-top: 10px; }
+
+        /* Apple-style Tab Bar */
+        .tab-container { display: flex; justify-content: center; gap: 15px; margin: 30px auto 60px; max-width: 800px; padding: 0 20px; }
+        .tab-btn { padding: 12px 24px; border: none; background: var(--light-bg); color: var(--dark); border-radius: 30px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: 0.3s; }
+        .tab-btn:hover { background: #e8e8ed; }
+        .tab-btn.active { background: var(--dark); color: white; }
+
+        /* Products Grid Layout */
+        .products-wrapper { max-width: 1200px; margin: 0 auto 100px; padding: 0 20px; box-sizing: border-box; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 35px; }
+        
+        /* Product Card Animation */
+        .product-card { background: var(--light-bg); border-radius: 24px; overflow: hidden; transition: 0.4s ease; display: block; }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        
+        .product-img-box { height: 260px; overflow: hidden; background: #e8e8ed; position: relative; }
+        .product-img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .product-card:hover .product-img-box img { transform: scale(1.05); }
+
+        .product-info { padding: 30px; }
+        .product-info h4 { color: var(--primary-green); margin: 0 0 8px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        .product-info h3 { margin: 0 0 12px; font-size: 1.5rem; font-weight: 600; }
+        .product-info p { margin: 0; color: var(--gray); font-size: 0.95rem; line-height: 1.6; }
+
+        footer { background: var(--light-bg); padding: 60px 10% 40px; color: var(--gray); font-size: 14px; border-top: 1px solid rgba(0,0,0,0.05); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-column h4 { color: var(--dark); margin-bottom: 20px; }
+
+        @media (max-width: 768px) {
+            .products-hero h1 { font-size: 2.5rem; }
+            .tab-container { overflow-x: auto; justify-content: flex-start; white-space: nowrap; padding-bottom: 10px; }
+            .tab-btn { padding: 10px 20px; font-size: 0.9rem; }
+        }
+    </style>
 </head>
-
 <body>
-    <nav><a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Products</a><a
-            href="contact.html">Contact</a></nav>
 
-    <section style="margin-top: 50px;">
-        <h1 style="font-size: 3rem; margin-bottom: 40px;">Our Portfolio.</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="products.html">Products</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
-        <!-- Filter Tabs -->
-        <div style="margin-bottom: 40px; display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px;">
-            <button class="btn" style="background: var(--dark); color: white;">All Items</button>
-            <button class="btn" style="background: var(--light);">Solar</button>
-            <button class="btn" style="background: var(--light);">Security</button>
-            <button class="btn" style="background: var(--light);">Chemicals</button>
-            <button class="btn" style="background: var(--light);">Electrical</button>
-        </div>
+    <header class="products-hero">
+        <h1>Our Products.</h1>
+        <p>Premium quality solutions tailored for your business needs.</p>
+    </header>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
-            <!-- Product Card -->
-            <div style="background: var(--light); border-radius: 20px; overflow: hidden;">
-                <div style="height: 250px; background: #ddd;"></div> <!-- Placeholder for Image -->
-                <div style="padding: 25px;">
-                    <h4 style="color: var(--primary);">Solar Energy</h4>
-                    <h3>Jinko Tiger Pro 550W</h3>
-                    <p style="font-size: 14px; color: var(--gray);">The world's most efficient solar module for
-                        commercial use.</p>
-                    <a href="#" style="display: block; margin-top: 20px; color: #0066cc; text-decoration: none;">View
-                        Specs ></a>
+    <!-- Tab Filter Buttons -->
+    <div class="tab-container">
+        <button class="tab-btn active" onclick="filterProducts('all')">All Products</button>
+        <button class="tab-btn" onclick="filterProducts('solar')">Solar Energy</button>
+        <button class="tab-btn" onclick="filterProducts('chemical')">Industrial Chemicals</button>
+        <button class="tab-btn" onclick="filterProducts('security')">CCTV & Security</button>
+    </div>
+
+    <!-- Products Wrapper -->
+    <div class="products-wrapper">
+        <div class="products-grid">
+            
+            <!-- Product 1: Solar -->
+            <div class="product-card" data-category="solar">
+                <div class="product-img-box">
+                    <!-- သင့် images folder ထဲက ပုံအမည်အတိုင်း ပြောင်းလဲနိုင်သည် -->
+                    <img src="images/solar-panel.jpg" alt="Solar Panel" onerror="this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=500&q=80'">
+                </div>
+                <div class="product-info">
+                    <h4>Solar Energy</h4>
+                    <h3>Premium Solar Panel 450W</h3>
+                    <p>High-efficiency monocrystalline solar panels engineered for durable industrial and residential grid systems.</p>
                 </div>
             </div>
-            <!-- ပစ္စည်းအသစ်တစ်ခု ထည့်ချင်တိုင်း ဒီ Card တစ်ခုလုံးကို Copy ကူးပြီး ထည့်ပါ -->
-            <div style="background: var(--light); border-radius: 20px; overflow: hidden;">
-                <!-- ပစ္စည်းပုံ ထည့်ရန် (ပုံမရှိသေးရင် ဒီအတိုင်းထားနိုင်ပါတယ်) -->
-                <<div style="height: 250px; overflow: hidden;">
-                    <img src="images/solar_1.jpg" style="width: 100%; height: 100%; object-fit: cover;"
-                        alt="Premium Solar Panel">
-            </div>
-            <div style="padding: 25px;">
-                <h4 style="color: var(--primary);">Category Name (ဥပမာ- Electrical)</h4>
-                <h3>Product Title (ဥပမာ- Industrial Motor)</h3>
-                <p style="font-size: 14px; color: var(--gray);">ဒီနေရာမှာ ပစ္စည်းအကြောင်း အကျဉ်းချုပ် ရေးပေးပါ။</p>
-                <a href="#" style="display: block; margin-top: 20px; color: #0066cc; text-decoration: none;">View
-                    Specs ></a>
-            </div>
-        </div>
-        <!-- ထပ်တိုး Product များကို ဤနေရာတွင် ဆက်ထည့်နိုင်သည် -->
-        </div>
-    </section>
-</body>
 
-</html>
-<footer>
-    <div class="footer-grid">
-        <div class="footer-column">
-            <h4>Hsu Tharaphu</h4>
-            <p>Providing premium trading solutions across Myanmar since 2015.</p>
-        </div>
-        <div class="footer-column">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="products.html">Our Products</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h4>Products</h4>
-            <ul>
-                <li><a href="products.html">Solar Panels</a></li>
-                <li><a href="products.html">Industrial Chemicals</a></li>
-                <li><a href="products.html">CCTV & Security</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h4>Contact Us</h4>
-            <p>Email: mr.thetsoekhaing@gmail.com<br>Phone: +95 9 451 200 420, +95 9 688 952 006</p>
+            <!-- Product 2: Chemical -->
+            <div class="product-card" data-category="chemical">
+                <div class="product-img-box">
+                    <img src="images/chemical-1.jpg" alt="Industrial Chemicals" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9d39d6618?auto=format&fit=crop&w=500&q=80'">
+                </div>
+                <div class="product-info">
+                    <h4>Chemicals</h4>
+                    <h3>Industrial Raw Materials</h3>
+                    <p>Top-grade chemical solutions and raw materials consistent with international manufacturing standards.</p>
+                </div>
+            </div>
+
+            <!-- Product 3: Security -->
+            <div class="product-card" data-category="security">
+                <div class="product-img-box">
+                    <img src="images/cctv.jpg" alt="CCTV Security" onerror="this.src='https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=500&q=80'">
+                </div>
+                <div class="product-info">
+                    <h4>CCTV & Security</h4>
+                    <h3>AI Smart Camera System</h3>
+                    <p>24/7 high-definition surveillance cameras integrated with advanced AI face recognition and night vision.</p>
+                </div>
+            </div>
+
+            <!-- Product 4: Solar (ထပ်တိုးထားသော ပစ္စည်းနမူနာ) -->
+            <div class="product-card" data-category="solar">
+                <div class="product-img-box">
+                    <img src="images/inverter.jpg" alt="Solar Inverter" onerror="this.src='https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?auto=format&fit=crop&w=500&q=80'">
+                </div>
+                <div class="product-info">
+                    <h4>Solar Energy</h4>
+                    <h3>Hybrid Smart Inverter</h3>
+                    <p>Intelligent power conversion with smart monitoring features to optimize your solar energy storage seamlessly.</p>
+                </div>
+            </div>
+
         </div>
     </div>
-    <hr style="opacity: 0.1; margin-bottom: 20px;">
-    <p style="text-align: center;">© 2026 Hsu Tharaphu Co., Ltd. All rights reserved.</p>
-</footer>
 
-<!-- Scroll to Top Button -->
-<button id="scrollTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    <!-- Corporate Footer (သတ်မှတ်ထားသော လိပ်စာအသစ်ဖြင့်) -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4 style="color: var(--dark);">Hsu Tharaphu Co., Ltd.</h4>
+                <p>Providing premium trading solutions across Myanmar since 2015.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Our Address</h4>
+                <p>No. 2025, Artharwaddy 4th Street, Dekkhinathiri Township, Naypyitaw, Myanmar.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Details</h4>
+                <p>
+                    Email: mr.thetsoekhaing@gmail.com<br>
+                    Phone: +95 9 451 200 420, +95 9 688 952 006
+                </p>
+            </div>
+        </div>
+        <hr style="opacity: 0.1; margin-bottom: 20px;">
+        <p style="text-align: center;">© 2026 Hsu Tharaphu Co., Ltd. All rights reserved.</p>
+    </footer>
 
-<script>
-    // Scroll လုပ်ရင် ခလုတ်လေး ပေါ်လာစေဖို့
-    window.onscroll = function () {
-        let btn = document.getElementById("scrollTop");
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            btn.style.display = "flex";
-        } else {
-            btn.style.display = "none";
+    <!-- JavaScript For Tab Filtering -->
+    <script>
+        function filterProducts(category) {
+            // Active Tab UI Class ပြောင်းလဲခြင်း
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Product Cards များကို Filter လုပ်ခြင်း
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    if (card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
         }
-    };
-</script>
+    </script>
+
+</body>
+</html>
