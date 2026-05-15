@@ -44,3 +44,14 @@ section { padding: 100px 10%; }
     background: var(--light); text-align: center; border-radius: 30px;
     margin: 50px 10%; padding: 60px;
 }
+/* style.css အောက်ဆုံးမှာ ပေါင်းထည့်ပါ */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
