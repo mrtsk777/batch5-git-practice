@@ -27,8 +27,9 @@ nav {
 }
 
 nav a {
-    color: var(--dark); text-decoration: none; font-size: 13px;
-    margin: 0 20px; transition: 0.3s; opacity: 0.8;
+    color: var(--dark); text-decoration: none; font-size: 18px;
+    margin: 0 20px; transition: 0.3s; opacity: 0.8; font-weight: 500; /* စာသားလေး နည်းနည်း ပိုထင်ရှားအောင် weight ထည့်လို့ရပါတယ် */
+}
 }
 
 nav a:hover { opacity: 1; color: var(--primary); }

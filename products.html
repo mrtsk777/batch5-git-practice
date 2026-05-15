@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products | Hsu Tharaphu</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <nav><a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Products</a><a href="contact.html">Contact</a></nav>
+    <nav><a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Products</a><a
+            href="contact.html">Contact</a></nav>
 
     <section style="margin-top: 50px;">
         <h1 style="font-size: 3rem; margin-bottom: 40px;">Our Portfolio.</h1>
-        
+
         <!-- Filter Tabs -->
         <div style="margin-bottom: 40px; display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px;">
             <button class="btn" style="background: var(--dark); color: white;">All Items</button>
@@ -28,14 +31,33 @@
                 <div style="padding: 25px;">
                     <h4 style="color: var(--primary);">Solar Energy</h4>
                     <h3>Jinko Tiger Pro 550W</h3>
-                    <p style="font-size: 14px; color: var(--gray);">The world's most efficient solar module for commercial use.</p>
-                    <a href="#" style="display: block; margin-top: 20px; color: #0066cc; text-decoration: none;">View Specs ></a>
+                    <p style="font-size: 14px; color: var(--gray);">The world's most efficient solar module for
+                        commercial use.</p>
+                    <a href="#" style="display: block; margin-top: 20px; color: #0066cc; text-decoration: none;">View
+                        Specs ></a>
+                </div>
+            </div>
+            <!-- ပစ္စည်းအသစ်တစ်ခု ထည့်ချင်တိုင်း ဒီ Card တစ်ခုလုံးကို Copy ကူးပြီး ထည့်ပါ -->
+            <div style="background: var(--light); border-radius: 20px; overflow: hidden;">
+                <!-- ပစ္စည်းပုံ ထည့်ရန် (ပုံမရှိသေးရင် ဒီအတိုင်းထားနိုင်ပါတယ်) -->
+                <div
+                    style="height: 250px; background: #eee; display: flex; align-items: center; justify-content: center;">
+                    <span style="color: #ccc;">Product Image</span>
+                </div>
+
+                <div style="padding: 25px;">
+                    <h4 style="color: var(--primary);">Category Name (ဥပမာ- Electrical)</h4>
+                    <h3>Product Title (ဥပမာ- Industrial Motor)</h3>
+                    <p style="font-size: 14px; color: var(--gray);">ဒီနေရာမှာ ပစ္စည်းအကြောင်း အကျဉ်းချုပ် ရေးပေးပါ။</p>
+                    <a href="#" style="display: block; margin-top: 20px; color: #0066cc; text-decoration: none;">View
+                        Specs ></a>
                 </div>
             </div>
             <!-- ထပ်တိုး Product များကို ဤနေရာတွင် ဆက်ထည့်နိုင်သည် -->
         </div>
     </section>
 </body>
+
 </html>
 <footer>
     <div class="footer-grid">
@@ -74,7 +96,7 @@
 
 <script>
     // Scroll လုပ်ရင် ခလုတ်လေး ပေါ်လာစေဖို့
-    window.onscroll = function() {
+    window.onscroll = function () {
         let btn = document.getElementById("scrollTop");
         if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
             btn.style.display = "flex";
