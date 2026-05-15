@@ -4,15 +4,22 @@
     --dark: #1d1d1f;
     --gray: #86868b;
     --light: #f5f5f7;
+    --blue: #0071e3;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body { font-family: 'Inter', sans-serif; background: #fff; color: var(--dark); line-height: 1.5; }
+body { 
+    font-family: 'Inter', -apple-system, sans-serif; 
+    background: #fff; 
+    color: var(--dark); 
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
 
-/* Apple-style Blur Nav */
+/* Smart Navigation */
 nav {
-    position: fixed; top: 0; width: 100%; z-index: 9999;
+    position: fixed; top: 0; width: 100%; z-index: 1000;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: saturate(180%) blur(20px);
     border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -21,37 +28,46 @@ nav {
 
 nav a {
     color: var(--dark); text-decoration: none; font-size: 13px;
-    margin: 0 20px; opacity: 0.8; transition: 0.3s;
+    margin: 0 20px; transition: 0.3s; opacity: 0.8;
 }
 
 nav a:hover { opacity: 1; color: var(--primary); }
 
-/* Standard Section Padding */
-section { padding: 100px 10%; }
-
-/* Custom Button */
-.btn {
-    padding: 12px 25px; border-radius: 980px;
-    text-decoration: none; font-weight: 500;
-    display: inline-block; transition: 0.3s;
-}
-
-.btn-green { background: var(--primary); color: white; }
-.btn-green:hover { background: #27ae60; transform: scale(1.05); }
-
-/* Newsletter Section */
-.newsletter {
-    background: var(--light); text-align: center; border-radius: 30px;
-    margin: 50px 10%; padding: 60px;
-}
-/* style.css အောက်ဆုံးမှာ ပေါင်းထည့်ပါ */
+/* Animation: Reveal on Scroll */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
-    transition: all 0.8s ease-out;
+    transition: 1s all ease;
 }
 
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Floating Scroll-to-Top Button */
+#scrollTop {
+    position: fixed; bottom: 30px; right: 30px;
+    background: var(--primary); color: white;
+    width: 45px; height: 45px; border-radius: 50%;
+    display: none; align-items: center; justify-content: center;
+    cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 999; border: none; font-size: 20px;
+}
+
+/* Footer Styling */
+footer {
+    background: var(--light); padding: 80px 10% 40px;
+    color: var(--gray); font-size: 14px;
+}
+
+.footer-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px; margin-bottom: 40px;
+}
+
+.footer-column h4 { color: var(--dark); margin-bottom: 20px; }
+.footer-column ul { list-style: none; }
+.footer-column ul li { margin-bottom: 10px; }
+.footer-column ul li a { color: var(--gray); text-decoration: none; transition: 0.3s; }
+.footer-column ul li a:hover { color: var(--primary); }
