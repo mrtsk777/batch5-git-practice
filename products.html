@@ -18,23 +18,20 @@
         .products-hero h1 { font-size: 3.5rem; font-weight: 700; letter-spacing: -2px; margin: 0; }
         .products-hero p { font-size: 1.3rem; color: var(--gray); margin-top: 10px; }
 
-        /* Apple-style Tab Bar */
         .tab-container { display: flex; justify-content: center; gap: 15px; margin: 30px auto 60px; max-width: 800px; padding: 0 20px; }
         .tab-btn { padding: 12px 24px; border: none; background: var(--light-bg); color: var(--dark); border-radius: 30px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: 0.3s; }
         .tab-btn:hover { background: #e8e8ed; }
         .tab-btn.active { background: var(--dark); color: white; }
 
-        /* Products Grid Layout */
         .products-wrapper { max-width: 1200px; margin: 0 auto 100px; padding: 0 20px; box-sizing: border-box; }
         .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 35px; }
         
-        /* Product Card Animation */
         .product-card { background: var(--light-bg); border-radius: 24px; overflow: hidden; transition: 0.4s ease; display: block; }
         .product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
         
-        .product-img-box { height: 260px; overflow: hidden; background: #e8e8ed; position: relative; }
-        .product-img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .product-card:hover .product-img-box img { transform: scale(1.05); }
+        /* ပုံမရှိရင်တောင် လှပနေစေမယ့် Box ပုံစံ ပြင်ဆင်ထားပါတယ် */
+        .product-img-box { height: 260px; overflow: hidden; background: #e8e8ed; display: flex; align-items: center; justify-content: center; color: #bcccbd; font-weight: 600; }
+        .product-img-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
         .product-info { padding: 30px; }
         .product-info h4 { color: var(--primary-green); margin: 0 0 8px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
@@ -68,7 +65,6 @@
         <p>Premium quality solutions tailored for your business needs.</p>
     </header>
 
-    <!-- Tab Filter Buttons -->
     <div class="tab-container">
         <button class="tab-btn active" onclick="filterProducts('all')">All Products</button>
         <button class="tab-btn" onclick="filterProducts('solar')">Solar Energy</button>
@@ -76,15 +72,13 @@
         <button class="tab-btn" onclick="filterProducts('security')">CCTV & Security</button>
     </div>
 
-    <!-- Products Wrapper -->
     <div class="products-wrapper">
         <div class="products-grid">
             
             <!-- Product 1: Solar -->
             <div class="product-card" data-category="solar">
                 <div class="product-img-box">
-                    <!-- သင့် images folder ထဲက ပုံအမည်အတိုင်း ပြောင်းလဲနိုင်သည် -->
-                    <img src="images/solar-panel.jpg" alt="Solar Panel" onerror="this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=500&q=80'">
+                    <img src="images/solar-panel.jpg" alt="Solar Panel">
                 </div>
                 <div class="product-info">
                     <h4>Solar Energy</h4>
@@ -96,7 +90,7 @@
             <!-- Product 2: Chemical -->
             <div class="product-card" data-category="chemical">
                 <div class="product-img-box">
-                    <img src="images/chemical-1.jpg" alt="Industrial Chemicals" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9d39d6618?auto=format&fit=crop&w=500&q=80'">
+                    <img src="images/chemical-1.jpg" alt="Industrial Chemicals">
                 </div>
                 <div class="product-info">
                     <h4>Chemicals</h4>
@@ -108,7 +102,7 @@
             <!-- Product 3: Security -->
             <div class="product-card" data-category="security">
                 <div class="product-img-box">
-                    <img src="images/cctv.jpg" alt="CCTV Security" onerror="this.src='https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=500&q=80'">
+                    <img src="images/cctv.jpg" alt="CCTV Security">
                 </div>
                 <div class="product-info">
                     <h4>CCTV & Security</h4>
@@ -117,10 +111,10 @@
                 </div>
             </div>
 
-            <!-- Product 4: Solar (ထပ်တိုးထားသော ပစ္စည်းနမူနာ) -->
+            <!-- Product 4: Solar -->
             <div class="product-card" data-category="solar">
                 <div class="product-img-box">
-                    <img src="images/inverter.jpg" alt="Solar Inverter" onerror="this.src='https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?auto=format&fit=crop&w=500&q=80'">
+                    <img src="images/inverter.jpg" alt="Solar Inverter">
                 </div>
                 <div class="product-info">
                     <h4>Solar Energy</h4>
@@ -132,7 +126,6 @@
         </div>
     </div>
 
-    <!-- Corporate Footer (သတ်မှတ်ထားသော လိပ်စာအသစ်ဖြင့်) -->
     <footer>
         <div class="footer-grid">
             <div class="footer-column">
@@ -155,15 +148,16 @@
         <p style="text-align: center;">© 2026 Hsu Tharaphu Co., Ltd. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript For Tab Filtering -->
     <script>
         function filterProducts(category) {
-            // Active Tab UI Class ပြောင်းလဲခြင်း
             const buttons = document.querySelectorAll('.tab-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            
+            // click ဖြစ်တဲ့ button ကို active ပြောင်းခြင်း
+            if(event) {
+                event.target.classList.add('active');
+            }
 
-            // Product Cards များကို Filter လုပ်ခြင်း
             const cards = document.querySelectorAll('.product-card');
             cards.forEach(card => {
                 if (category === 'all') {
