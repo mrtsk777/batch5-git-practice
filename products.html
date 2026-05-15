@@ -4,69 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products | Hsu Tharaphu</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root { --primary-green: #2ecc71; --dark: #1d1d1f; }
-        body { font-family: 'Inter', sans-serif; margin: 0; background: #fff; color: var(--dark); }
-        
-        nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); position: fixed; top: 0; width: 100%; z-index: 1000; display: flex; justify-content: center; padding: 15px 0; }
-        nav a { color: var(--dark); text-decoration: none; font-size: 14px; margin: 0 20px; }
-
-        .container { max-width: 1200px; margin: 100px auto; padding: 20px; }
-        
-        .category-header { font-size: 2.5rem; font-weight: 600; margin: 60px 0 30px; border-bottom: 1px solid #d2d2d7; padding-bottom: 10px; }
-        
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
-        
-        .card { background: #f5f5f7; border-radius: 18px; padding: 30px; transition: 0.3s; position: relative; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .card .badge { background: var(--primary-green); color: white; padding: 5px 12px; border-radius: 20px; font-size: 10px; font-weight: bold; position: absolute; top: 20px; right: 20px; }
-        .card h3 { margin: 10px 0; font-size: 1.4rem; }
-        .card p { color: #86868b; font-size: 0.9rem; line-height: 1.5; }
-        .card .price { font-weight: 600; margin-top: 20px; display: block; color: var(--primary-green); }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav><a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Products</a><a href="contact.html">Contact</a></nav>
 
-    <div class="container">
-        <h1 style="font-size: 4rem; text-align: center; margin-bottom: 80px;">All Products.</h1>
-
-        <!-- Category: Solar -->
-        <div class="category-header">Solar Systems</div>
-        <div class="product-grid">
-            <div class="card">
-                <span class="badge">BEST SELLER</span>
-                <h3>Solar Panel 550W</h3>
-                <p>High-efficiency Monocrystalline panel for industrial use.</p>
-                <span class="price">Premium Grade</span>
-            </div>
-            <div class="card">
-                <h3>Hybrid Inverter</h3>
-                <p>Smart energy management with app support.</p>
-                <span class="price">Available</span>
-            </div>
-            <div class="card">
-                <h3>Lithium Battery 100Ah</h3>
-                <p>Long-lasting LiFePO4 battery with 10-year warranty.</p>
-                <span class="price">New Arrival</span>
-            </div>
+    <section style="margin-top: 50px;">
+        <h1 style="font-size: 3rem; margin-bottom: 40px;">Our Portfolio.</h1>
+        
+        <!-- Filter Tabs -->
+        <div style="margin-bottom: 40px; display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px;">
+            <button class="btn" style="background: var(--dark); color: white;">All Items</button>
+            <button class="btn" style="background: var(--light);">Solar</button>
+            <button class="btn" style="background: var(--light);">Security</button>
+            <button class="btn" style="background: var(--light);">Chemicals</button>
+            <button class="btn" style="background: var(--light);">Electrical</button>
         </div>
 
-        <!-- Category: Chemicals -->
-        <div class="category-header">Industrial Chemicals</div>
-        <div class="product-grid">
-            <div class="card">
-                <h3>Industrial Solvent</h3>
-                <p>High-purity grade for chemical manufacturing.</p>
-                <span class="price">Bulk Order</span>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+            <!-- Product Card -->
+            <div style="background: var(--light); border-radius: 20px; overflow: hidden;">
+                <div style="height: 250px; background: #ddd;"></div> <!-- Placeholder for Image -->
+                <div style="padding: 25px;">
+                    <h4 style="color: var(--primary);">Solar Energy</h4>
+                    <h3>Jinko Tiger Pro 550W</h3>
+                    <p style="font-size: 14px; color: var(--gray);">The world's most efficient solar module for commercial use.</p>
+                    <a href="#" style="display: block; margin-top: 20px; color: #0066cc; text-decoration: none;">View Specs ></a>
+                </div>
             </div>
-            <div class="card">
-                <h3>Polymer Resin</h3>
-                <p>Consistent quality for plastic production industries.</p>
-                <span class="price">Certified</span>
-            </div>
+            <!-- ထပ်တိုး Product များကို ဤနေရာတွင် ဆက်ထည့်နိုင်သည် -->
         </div>
-    </div>
+    </section>
 </body>
 </html>
